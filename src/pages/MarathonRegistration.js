@@ -3,6 +3,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+const BASE_URL = 'https://afeka-marathons-backend.vercel.app';
+
 const MarathonRegistration = () => {
   const { id } = useParams();
   const [marathon, setMarathon] = useState(null);
@@ -13,9 +15,9 @@ const MarathonRegistration = () => {
   });
 
   useEffect(() => {
-    axios.get(`/api/marathon/${id}`) //Get marathon details
+    axios.get(`${BASE_URL}/api/marathon/${id}`) // Get marathon details from the server
       .then(response => setMarathon(response.data))
-      .catch(error => console.error(error));
+      .catch(error => console.error('Error fetching marathon details:', error));
   }, [id]);
 
   const handleInputChange = (e) => {
@@ -24,9 +26,9 @@ const MarathonRegistration = () => {
   };
 
   const handlePaymentSuccess = (details) => {
-    axios.post(`/api/register/${id}`, { student, transactionId: details.id })  //Saves the registration information
+    axios.post(`${BASE_URL}/api/register/${id}`, { student, transactionId: details.id }) // Save the registration information
       .then(response => alert('הרשמה בוצעה בהצלחה'))
-      .catch(error => console.error(error));
+      .catch(error => console.error('Error saving registration:', error));
   };
 
   return (

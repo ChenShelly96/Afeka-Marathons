@@ -3,13 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/LandingPage.css';
 
+const BASE_URL = 'https://afeka-marathons-backend.vercel.app';
+
 const LandingPage = () => {
   const [marathons, setMarathons] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/marathons') // Sending to the server to receive the list of marathons
+    axios.get(`${BASE_URL}/api/marathons`) // Sending request to the server to receive the list of marathons
       .then(response => setMarathons(response.data))
-      .catch(error => console.error(error));
+      .catch(error => console.error('Error fetching marathons:', error));
   }, []);
 
   return (
