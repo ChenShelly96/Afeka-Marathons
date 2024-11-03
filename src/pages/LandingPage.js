@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './styles/LandingPage.css';
+import '../styles/LandingPage.css';
 
 const LandingPage = () => {
   const [marathons, setMarathons] = useState([]);
