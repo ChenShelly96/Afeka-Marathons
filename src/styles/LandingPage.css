@@ -1,0 +1,35 @@
+.landing-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .marathon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .marathon-card {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .marathon-card {
+      width: 100%;
+    }
+  }
+  
