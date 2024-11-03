@@ -7,7 +7,7 @@ const PORT = 5000;
 app.use(express.json());
 
 const marathons = [
-  { id: 1, name: 'מוגבר למתמטיקה', date: '01/10/2024', price: 240 },
+  { id: 1, name: 'מבוא להסתברות', date: '01/10/2024', price: 240 },
   { id: 2, name: 'מתמטיקה בדידה', date: '02/10/2024', price: 260 },
 ];
 
